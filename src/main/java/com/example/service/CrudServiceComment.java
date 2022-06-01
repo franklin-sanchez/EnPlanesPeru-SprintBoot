@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 @Service
-public interface CrudServiceFavorite <T, ID>{
+public interface CrudServiceComment <T, ID>{
 	List<T> getAll();
 
 	T getOneById(ID id);

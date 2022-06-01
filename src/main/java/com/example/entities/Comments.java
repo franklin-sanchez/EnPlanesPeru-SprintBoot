@@ -1,35 +1,45 @@
 package com.example.entities;
 
-import java.util.Date;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
-import javax.persistence.ManyToOne;
+
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "favorites_packages")
-public class FavoritePackage {
+@Table(name = "comments")
+public class Comments {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "name_package", nullable = false)
-	private String namePackage;
+	@Column(name = "name_user", nullable = false)
+	private String nameUser;
 	
-	@Column(name = "package_start_date", nullable = false) 
-	private Date dateStart;
+	@Column(name = "mail", nullable = false, length = 30)
+	private String mail;
+
+	@Column(name = "celphone", length = 25)
+	private Long celphone;
 	
-	@Column(name = "package_end_date", nullable = false)
-	private Date dateEnd;
+	@Column(name = "comment", nullable = false, length = 500)
+	private String comment;
 	
-	@Column(name = "maximum_people", nullable = false)
-	private int maximumPeople ;
+	@Column(name = "valoration", length = 25)
+	private Long valoration;
+	
+
+	public Long getValoration() {
+		return valoration;
+	}
+
+	public void setValoration(Long valoration) {
+		this.valoration = valoration;
+	}
 
 	public Long getId() {
 		return id;
@@ -39,37 +49,39 @@ public class FavoritePackage {
 		this.id = id;
 	}
 
-	public String getNamePackage() {
-		return namePackage;
+	public String getNameUser() {
+		return nameUser;
 	}
 
-	public void setNamePackage(String namePackage) {
-		this.namePackage = namePackage;
+	public void setNameUser(String nameUser) {
+		this.nameUser = nameUser;
 	}
 
-	public Date getDateStart() {
-		return dateStart;
+	public String getMail() {
+		return mail;
 	}
 
-	public void setDateStart(Date dateStart) {
-		this.dateStart = dateStart;
+	public void setMail(String mail) {
+		this.mail = mail;
 	}
 
-	public Date getDateEnd() {
-		return dateEnd;
+	public Long getCelphone() {
+		return celphone;
 	}
 
-	public void setDateEnd(Date dateEnd) {
-		this.dateEnd = dateEnd;
+	public void setCelphone(Long celphone) {
+		this.celphone = celphone;
 	}
 
-	public int getMaximumPeople() {
-		return maximumPeople;
+	public String getComment() {
+		return comment;
 	}
 
-	public void setMaximumPeople(int maximumPeople) {
-		this.maximumPeople = maximumPeople;
+	public void setComment(String comment) {
+		this.comment = comment;
 	}
+
+	
 	
 	/*@Lob
 	@ManyToOne

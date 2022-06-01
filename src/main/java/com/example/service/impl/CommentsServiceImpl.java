@@ -2,45 +2,42 @@ package com.example.service.impl;
 
 import java.util.List;
 
-import com.example.entities.FavoritePackage;
-import com.example.repository.FavoriteRepository;
-import com.example.service.FavoriteService;
+import com.example.entities.Comments;
+import com.example.repository.CommentsRepository;
+import com.example.service.CommentsService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
 @Service
-public class FavoritesServiceImpl implements FavoriteService{
+public class CommentsServiceImpl implements CommentsService{
 
 	@Autowired
-	private FavoriteRepository favoriteRepository;
+	private CommentsRepository favoriteRepository;
 
-	public List<FavoritePackage> getAll() {
+	public List<Comments> getAll() {
 		return favoriteRepository.findAll();
 	}
 	
 	@Override
-	public Long create(FavoritePackage entity) {
+	public Long create(Comments entity) {
 		favoriteRepository.save(entity);
 		return entity.getId();
 	}
 
 	@Override
-	public FavoritePackage getOneById(Long id) {
+	public Comments getOneById(Long id) {
 		return favoriteRepository.findById(id).orElseThrow(() -> new RuntimeException("Package Favorite Not Found!"));
 	}
 
 	@Override
-	public void update(Long id, FavoritePackage entity) {
+	public void update(Long id, Comments entity) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void delete(Long id) {
 		favoriteRepository.deleteById(id);
 	}
-
-	
 }

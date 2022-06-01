@@ -1,11 +1,11 @@
 package com.example.repository;
 
-import com.example.entities.FavoritePackage;
+import com.example.entities.Comments;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 @Repository
-public interface FavoriteRepository extends JpaRepository<FavoritePackage, Long> {
+public interface CommentsRepository extends JpaRepository<Comments, Long> {
 	
 	/*@Query("FROM FavoritePackage")
 	List<FavoritePackage> findAll();
